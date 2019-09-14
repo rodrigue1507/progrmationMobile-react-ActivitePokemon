@@ -1,10 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PokeApi from './components/pokeApi';
+import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import PokemeonDate from './components/pokemonsData';
-import pokecss from './css';
+import Poke from './components/poke';
 
-ReactDOM.render(<PokemeonDate/>,document.getElementById('root'))
-
+ReactDOM.render(<Poke/>,document.getElementById('root'))
 
