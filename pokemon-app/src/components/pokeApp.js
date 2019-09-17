@@ -7,7 +7,7 @@ class PokeApp extends React.Component{
   render(){
     return <div className="poke">
       <PokeList/>
-      <DetailView />
+      <DetailView/>
     </div>;
   }
 }
