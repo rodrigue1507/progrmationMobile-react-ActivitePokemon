@@ -1,5 +1,6 @@
 import React from 'react';
 import Pokemon from '../pokemon'
+import DetailView from './detailsView'
 import PokeCell from './pokeCell';
 import  PokeClasses  from '../components/pokeClasses';
 import './styles/pokeList.css';
@@ -46,12 +47,19 @@ class PokeList extends React.Component{
         });
       });
     }
+
+    handleClick(name,id){
+      console.log(name + id)
+      // <DetailView name={name} id={id}/>
+    }
   
     render(){
       const {fetched, loading, species} = this.state;
       let content ;
       if(fetched){
-        content = <div >{species.map((pokemon,index)=><Pokemon key={pokemon.name} id={index+1} pokemon={pokemon}/>)}</div>;
+        content = <div>{species.map((pokemon,index)=>
+          <Pokemon key={pokemon.name} id={index+1} pokemon={pokemon} />)}
+        </div>;
       }else if(loading && !fetched){
           content = <p> Loading ...</p>;
       }
