@@ -9,8 +9,8 @@
 
 // export default Pokemon;
 import React from 'react';
-import '../src/components/styles/pokecell.css';
-import DetailView from './components/detailsView';
+import './components/styles/pokecell.css';
+import PokeApp from './components/pokeApp';
 
 class Pokemon extends React.Component{
     render(){
@@ -18,18 +18,18 @@ class Pokemon extends React.Component{
         return <div className="pokemon--species">
                 <div className="poke-cell" onClick={()=>this.GetItemTata(id,pokemon.name)}>
                   <div className="">
-                    <img src={`../assets/Pokemon_XY_Sprites/${id}.png`}  alt='image'/>
+                    <img src={`./assets/Pokemon_XY_Sprites/${id}.png`}  alt='image'/>
                   </div>
                   <div className=""> {pokemon.name} </div>
                 </div>
               </div>;
         }
       
-        GetItemTata=(id,name)=>{
-          console.log(name);
+        GetItemTata=(pokemon)=>{
+          console.log(pokemon);
           return(
             <div>
-              <DetailView id={id} name={name}/>   
+              <selectedPokeApp Pokemon={this.props.pokemon} />   
             </div>
           ) 
         }
